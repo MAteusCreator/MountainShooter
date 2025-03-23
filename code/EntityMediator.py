@@ -17,7 +17,7 @@ class EntityMediator:
         if isinstance(ent, EnemyShot):
             if ent.rect.right <= 0:
                 ent.health = 0
-        pass
+
 
     @staticmethod
     def verify_collision(entity_list: list[Entity]):

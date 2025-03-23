@@ -31,7 +31,7 @@ class Level:
 
 
     def run(self):
-       # pygame.mixer_music.load(f'./assets/{self.name}.mp3')
+        pygame.mixer_music.load(f'./assets/{self.name}.mp3')
         pygame.mixer_music.play(-1)
         clock = pygame.time.Clock()
         while True:
@@ -40,9 +40,9 @@ class Level:
                 self.window.blit(source=ent.surf, dest=ent.rect)
                 ent.move()
                 if isinstance(ent, (Player, Enemy)):
-                    shot = ent.shoot()
-                    if shot is not None:
-                        self.entity_list.append(shot)
+                    shoot = ent.shoot()
+                    if shoot is not None:
+                        self.entity_list.append(shoot)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
